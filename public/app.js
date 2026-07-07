@@ -8,7 +8,6 @@ const resultsEl = document.getElementById('results');
 
 let selectedFiles = [];
 
-// ---------- File upload UX (click + drag/drop) ----------
 dropzone.addEventListener('click', () => fileInput.click());
 
 fileInput.addEventListener('change', (e) => {
@@ -50,7 +49,6 @@ function renderThumbs() {
   });
 }
 
-// ---------- Form submission ----------
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   formError.textContent = '';
@@ -93,7 +91,6 @@ function setLoading(isLoading) {
     : 'Run fit analysis';
 }
 
-// ---------- Results rendering ----------
 function renderResults(data) {
   resultsEl.innerHTML = '';
   resultsEl.hidden = false;
