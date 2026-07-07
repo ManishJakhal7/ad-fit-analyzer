@@ -69,7 +69,7 @@ ad-fit-analyzer/
 ## Setup
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/ManishJakhal7/ad-fit-analyzer.git
 cd ad-fit-analyzer
 npm install
 cp .env.example .env
@@ -117,6 +117,3 @@ npm start
 - Gemini free tier has rate limits (~15 req/min); heavy usage will need a
   paid tier or a different provider
 
-## License
-
-MJ Solutions under Jakhal Industries
