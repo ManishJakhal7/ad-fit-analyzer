@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ad–Page Fit Analyzer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <span class="mark">◧◨</span>
+      <div class="masthead-text">
+        <h1>Ad&ndash;Page Fit Analyzer</h1>
+        <p class="sub">Checks whether a landing page delivers on what the ad promised.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="intake">
+    <form id="analyzeForm">
+      <div class="sources">
+
+        <section class="source-panel" aria-labelledby="ad-heading">
+          <div class="panel-label">
+            <span class="panel-tag">SOURCE A</span>
+            <h2 id="ad-heading">The Ad</h2>
+          </div>
+
+          <label class="field">
+            <span class="field-label">Ad copy</span>
+            <textarea id="adCopy" name="adCopy" rows="6" placeholder="Paste the ad headline and body copy here..."></textarea>
+          </label>
+
+          <label class="field">
+            <span class="field-label">Ad screenshot(s) <span class="optional">— optional, up to 6</span></span>
+            <div class="dropzone" id="dropzone">
+              <input type="file" id="adImages" name="adImages" accept="image/*" multiple hidden />
+              <span class="dropzone-hint">Click to upload, or drag images here</span>
+              <div id="thumbList" class="thumb-list"></div>
+            </div>
+          </label>
+        </section>
+
+        <div class="connector" aria-hidden="true">
+          <div class="connector-line"></div>
+          <span class="connector-glyph">vs</span>
+          <div class="connector-line"></div>
+        </div>
+
+        <section class="source-panel" aria-labelledby="page-heading">
+          <div class="panel-label">
+            <span class="panel-tag">SOURCE B</span>
+            <h2 id="page-heading">The Landing Page</h2>
+          </div>
+
+          <label class="field">
+            <span class="field-label">Landing page URL</span>
+            <input type="url" id="landingPageUrl" name="landingPageUrl" placeholder="https://example.com/product" required />
+          </label>
+
+          <p class="field-note">We'll fetch the page and capture the above-the-fold view for comparison.</p>
+        </section>
+
+      </div>
+
+      <div class="submit-row">
+        <button type="submit" id="submitBtn">
+          <span class="btn-label">Run fit analysis</span>
+        </button>
+        <p id="formError" class="form-error" role="alert"></p>
+      </div>
+    </form>
+
+    <section id="results" class="results" hidden></section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

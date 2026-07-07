@@ -1,0 +1,4 @@
+node_modules/
+claudeClient.js
+.env
+*.log
